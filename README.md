@@ -33,7 +33,7 @@ Everything else is identical, so any timing difference is attributable to those 
 
 ### Software vertex processing
 
-| scene                 | vtx    | cmds | declared upstream | declared exact | less work | upstream | exact   | speedup   |
+| scene                 | vtx    | cmds | declared upstream | declared patched | less work | upstream | patched   | speedup   |
 | --------------------- | ------ | ---- | ----------------- | -------------- | --------- | -------- | ------- | --------- |
 | menu chrome only      | 76     | 2    | 152               | 76             | 2.00x     | 0.02 ms  | 0.01 ms | 1.79x     |
 | 1 row                 | 436    | 6    | 2 616             | 1 268          | 2.06x     | 0.35 ms  | 0.17 ms | 2.03x     |
@@ -51,7 +51,7 @@ Everything else is identical, so any timing difference is attributable to those 
 Both variants sit at 0.00-0.02 ms for every scene.
 
 The only measurable cost the patch adds is the min/max scan itself: ~20 µs per frame at 17 000
-vertices / 57 000 indices (`100 rows`, `exact` 0.02 ms vs `upstream` 0.00 ms).
+vertices / 57 000 indices (`100 rows`, `patched` 0.02 ms vs `upstream` 0.00 ms).
 
 ## Reading the output
 
