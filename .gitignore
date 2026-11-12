@@ -1,0 +1,5 @@
+# build output
+*.obj
+*.exe
+*.pdb
+*.ilk
